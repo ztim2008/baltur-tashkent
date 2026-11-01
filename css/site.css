@@ -89,7 +89,7 @@ body{padding-top:72px}
 .bt-mclose span{position:absolute;left:11px;right:11px;top:21px;height:2px;background:var(--i);border-radius:2px;transform:rotate(45deg)}.bt-mclose span+span{transform:rotate(-45deg)}
 .bt-mclose:focus-visible{outline:3px solid #fff;outline-offset:3px}
 .bt-icall{display:flex;margin-left:auto;width:44px;height:44px;border-radius:50%;align-items:center;justify-content:center;background:var(--c);color:#fff}
-.bt-burger{display:flex;flex-direction:column;justify-content:center;gap:6px;width:44px;height:44px;padding:0 11px;margin-left:8px;background:transparent;border:1px solid var(--l);border-radius:50%;cursor:pointer;position:relative;z-index:80}
+.bt-burger{display:flex;flex-direction:column;justify-content:center;gap:6px;width:44px;height:44px;padding:0 11px;margin-left:8px;background:transparent;border:1px solid var(--l);border-radius:50%;cursor:pointer;position:relative}
 .bt-burger span{display:block;height:2px;background:var(--i);border-radius:2px;transition:transform 300ms ease,opacity 200ms ease}
 .bt-burger[aria-expanded=true] span:nth-child(1){transform:translateY(8px) rotate(45deg)}
 .bt-burger[aria-expanded=true] span:nth-child(2){opacity:0;transform:scaleX(0)}
