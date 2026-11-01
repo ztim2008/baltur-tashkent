@@ -1,7 +1,7 @@
 <!-- Craftum HTML-блок: proc. Самодостаточный: стили внутри, префикс .bt- -->
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-.bt{--g:#07090e;--gt:#101522;--p:#10141c;--a:#ff951f;--v:#edcd8c;--i:#f4f5f7;--im:#c9ced8;--l:#303139;
+.bt{--g:#07090e;--gt:#101522;--p:#10141c;--a:#ff8a2a;--c:#15803d;--ch:#166534;--v:#edcd8c;--i:#f4f5f7;--im:#c9ced8;--l:#303139;
 --lg:#f3f1ec;--lp:#fff;--li:#14171f;--lim:#4a4f5b;--ll:#dcd8cf;
 font-family:"IBM Plex Sans",sans-serif;font-size:16px;line-height:1.6;color:var(--i);background:var(--g);box-sizing:border-box}
 .bt *,.bt *::before,.bt *::after{box-sizing:inherit}
@@ -17,6 +17,14 @@ font-family:"IBM Plex Sans",sans-serif;font-size:16px;line-height:1.6;color:var(
 .bt-light .bt-k{color:#b45f00}
 .bt-btn{display:inline-flex;gap:10px;align-items:center;background:var(--a);color:#0b0c10;font-weight:600;text-decoration:none;padding:14px 26px;border-radius:40px;border:1px solid var(--a);transition:background 160ms ease,border-color 160ms ease}
 .bt-btn:hover{background:#ffad52;border-color:#ffad52}
+.bt-call{background:var(--c);border-color:var(--c);color:#fff}.bt-call:hover{background:var(--ch);border-color:var(--ch)}
+.bt-acts{display:flex;flex-wrap:wrap;gap:12px}
+.bt-fx{position:relative;isolation:isolate;overflow:hidden}
+.bt-fx>.bt-w{position:relative;z-index:2}
+.bt-fx::before{content:"";position:absolute;inset:0;z-index:0;background:var(--bg,none) center/cover no-repeat;opacity:.55}
+.bt-fx::after{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(180deg,rgba(7,9,14,.55),rgba(7,9,14,.82))}
+.bt-veil{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;mix-blend-mode:screen;opacity:.85}
+.bt-veil-fallback>.bt-w::before{content:"";position:absolute;inset:-96px -100vw;z-index:-1;pointer-events:none;background:radial-gradient(60% 70% at 85% 15%,rgba(120,8,8,.55),transparent 70%),radial-gradient(50% 60% at 10% 90%,rgba(66,0,0,.6),transparent 70%)}
 .bt-btn2{display:inline-flex;gap:10px;align-items:center;color:inherit;text-decoration:none;padding:14px 26px;border-radius:40px;border:1px solid currentColor;transition:background 160ms ease}
 .bt-btn2:hover{background:rgba(127,127,127,.15)}
 .bt a:focus-visible{outline:2px solid var(--a);outline-offset:3px}
@@ -45,4 +53,4 @@ font-family:"IBM Plex Sans",sans-serif;font-size:16px;line-height:1.6;color:var(
 .bt-proc h3{font-size:17px}.bt-proc p{font-size:14px}
 @media (max-width:800px){.bt-proc ol{grid-template-columns:1fr 1fr}.bt-proc li::after{display:none}}
 @media (max-width:520px){.bt-proc ol{grid-template-columns:1fr;gap:0}.bt-proc li{padding:0 0 24px 46px;border-left:1px solid var(--l);margin-left:14px}.bt-proc li::before{left:-15px}}</style>
-<section class="bt bt-sec bt-tint bt-proc"><div class="bt-w"><span class="bt-k">Порядок работы</span><h2>Как проходит вызов инженера</h2><ol><li><h3>Звонок</h3><p>Опишите проблему и назовите модель с шильдика горелки.</p></li><li><h3>Выезд</h3><p>Аварийный — до 2 часов по Ташкенту, плановый — в согласованный день.</p></li><li><h3>Диагностика</h3><p>Осмотр, проверка автоматики и замеры дымовых газов.</p></li><li><h3>Работы</h3><p>Чистка, замена деталей, настройка. Стоимость согласуем до начала работ.</p></li><li><h3>Протокол</h3><p>Акт, результаты замеров и рекомендации по следующему ТО.</p></li></ol><div class="bt-acts"><a class="bt-btn" href="tel:+998982100303">Начать со звонка: +998 98 210 03 03 <span aria-hidden="true">→</span></a></div></div></section>
+<section class="bt bt-sec bt-tint bt-proc bt-fx" data-veil data-veil-color="#420000" style="--bg:url(https://ztim2008.github.io/baltur-tashkent/img/bg3.webp)"><div class="bt-w"><span class="bt-k">Порядок работы</span><h2>Как проходит вызов инженера</h2><ol><li><h3>Звонок</h3><p>Опишите проблему и назовите модель с шильдика горелки.</p></li><li><h3>Выезд</h3><p>Аварийный — до 2 часов по Ташкенту, плановый — в согласованный день.</p></li><li><h3>Диагностика</h3><p>Осмотр, проверка автоматики и замеры дымовых газов.</p></li><li><h3>Работы</h3><p>Чистка, замена деталей, настройка. Стоимость согласуем до начала работ.</p></li><li><h3>Протокол</h3><p>Акт, результаты замеров и рекомендации по следующему ТО.</p></li></ol><div class="bt-acts"><a class="bt-btn bt-call" href="tel:+998982100303">Начать со звонка: +998 98 210 03 03 <span aria-hidden="true">→</span></a></div></div></section>

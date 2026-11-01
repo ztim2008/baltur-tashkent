@@ -1,7 +1,7 @@
 <!-- Craftum HTML-блок: kontakty-03-bt-ctell. Самодостаточный: стили внутри, префикс .bt- -->
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-.bt{--g:#07090e;--gt:#101522;--p:#10141c;--a:#ff951f;--v:#edcd8c;--i:#f4f5f7;--im:#c9ced8;--l:#303139;
+.bt{--g:#07090e;--gt:#101522;--p:#10141c;--a:#ff8a2a;--c:#15803d;--ch:#166534;--v:#edcd8c;--i:#f4f5f7;--im:#c9ced8;--l:#303139;
 --lg:#f3f1ec;--lp:#fff;--li:#14171f;--lim:#4a4f5b;--ll:#dcd8cf;
 font-family:"IBM Plex Sans",sans-serif;font-size:16px;line-height:1.6;color:var(--i);background:var(--g);box-sizing:border-box}
 .bt *,.bt *::before,.bt *::after{box-sizing:inherit}
@@ -17,6 +17,14 @@ font-family:"IBM Plex Sans",sans-serif;font-size:16px;line-height:1.6;color:var(
 .bt-light .bt-k{color:#b45f00}
 .bt-btn{display:inline-flex;gap:10px;align-items:center;background:var(--a);color:#0b0c10;font-weight:600;text-decoration:none;padding:14px 26px;border-radius:40px;border:1px solid var(--a);transition:background 160ms ease,border-color 160ms ease}
 .bt-btn:hover{background:#ffad52;border-color:#ffad52}
+.bt-call{background:var(--c);border-color:var(--c);color:#fff}.bt-call:hover{background:var(--ch);border-color:var(--ch)}
+.bt-acts{display:flex;flex-wrap:wrap;gap:12px}
+.bt-fx{position:relative;isolation:isolate;overflow:hidden}
+.bt-fx>.bt-w{position:relative;z-index:2}
+.bt-fx::before{content:"";position:absolute;inset:0;z-index:0;background:var(--bg,none) center/cover no-repeat;opacity:.55}
+.bt-fx::after{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(180deg,rgba(7,9,14,.55),rgba(7,9,14,.82))}
+.bt-veil{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;mix-blend-mode:screen;opacity:.85}
+.bt-veil-fallback>.bt-w::before{content:"";position:absolute;inset:-96px -100vw;z-index:-1;pointer-events:none;background:radial-gradient(60% 70% at 85% 15%,rgba(120,8,8,.55),transparent 70%),radial-gradient(50% 60% at 10% 90%,rgba(66,0,0,.6),transparent 70%)}
 .bt-btn2{display:inline-flex;gap:10px;align-items:center;color:inherit;text-decoration:none;padding:14px 26px;border-radius:40px;border:1px solid currentColor;transition:background 160ms ease}
 .bt-btn2:hover{background:rgba(127,127,127,.15)}
 .bt a:focus-visible{outline:2px solid var(--a);outline-offset:3px}
@@ -39,4 +47,4 @@ font-family:"IBM Plex Sans",sans-serif;font-size:16px;line-height:1.6;color:var(
 @media (max-width:520px){.bt-grid3{grid-template-columns:1fr}.bt-sec{padding:56px 0}.bt-btn,.bt-btn2{width:100%;justify-content:center}}
 @media (prefers-reduced-motion:reduce){.bt *{transition:none!important}}
 </style>
-<section class="bt bt-sec bt-dark bt-ctell"><div class="bt-w"><div class="bt-split"><div><span class="bt-k">Чтобы ускорить выезд</span><h2>Что сообщить при звонке</h2></div><div><ul class="bt-list"><li>Модель и серийный номер — на шильдике горелки</li><li>Вид топлива: газ, дизель, мазут</li><li>Что происходит: не разжигается, блокировка, дым, шум</li><li>Адрес объекта и контакт на месте</li></ul><div class=bt-acts><a class="bt-btn" href="tel:+998982100303">Обсудить по телефону: +998 98 210 03 03 <span aria-hidden="true">→</span></a></div></div></div></div></section>
+<section class="bt bt-sec bt-dark bt-ctell bt-fx" data-veil data-veil-color="#420000" style="--bg:url(https://ztim2008.github.io/baltur-tashkent/img/bg1.webp)"><div class="bt-w"><div class="bt-split"><div><span class="bt-k">Чтобы ускорить выезд</span><h2>Что сообщить при звонке</h2></div><div><ul class="bt-list"><li>Модель и серийный номер — на шильдике горелки</li><li>Вид топлива: газ, дизель, мазут</li><li>Что происходит: не разжигается, блокировка, дым, шум</li><li>Адрес объекта и контакт на месте</li></ul><div class=bt-acts><a class="bt-btn bt-call" href="tel:+998982100303">Обсудить по телефону: +998 98 210 03 03 <span aria-hidden="true">→</span></a></div></div></div></div></section>
