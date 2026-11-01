@@ -1,0 +1,53 @@
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet"><style>
+.bt{--g:#07090e;--gt:#101522;--p:#10141c;--a:#ff951f;--v:#edcd8c;--i:#f4f5f7;--im:#c9ced8;--l:#303139;
+--lg:#f3f1ec;--lp:#fff;--li:#14171f;--lim:#4a4f5b;--ll:#dcd8cf;
+font-family:"IBM Plex Sans",sans-serif;font-size:16px;line-height:1.6;color:var(--i);background:var(--g);box-sizing:border-box}
+.bt *,.bt *::before,.bt *::after{box-sizing:inherit}
+.bt-w{max-width:1200px;margin:0 auto;padding:0 32px}
+.bt-sec{padding:96px 0}
+.bt-dark{background:var(--g);color:var(--i)} .bt-tint{background:var(--gt);color:var(--i)}
+.bt-light{background:var(--lg);color:var(--li)}
+.bt h1,.bt h2,.bt h3{font-weight:500;letter-spacing:-.02em;line-height:1.08;margin:0 0 16px}
+.bt h2{font-size:clamp(30px,3.6vw,46px)} .bt h3{font-size:20px;line-height:1.25}
+.bt p{margin:0 0 14px;line-height:1.65}
+.bt-dark p,.bt-tint p{color:var(--im)} .bt-light p{color:var(--lim)}
+.bt-k{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--a);margin-bottom:14px;display:block}
+.bt-light .bt-k{color:#b45f00}
+.bt-btn{display:inline-flex;gap:10px;align-items:center;background:var(--a);color:#0b0c10;font-weight:600;text-decoration:none;padding:14px 26px;border-radius:40px;border:1px solid var(--a);transition:background 160ms ease,border-color 160ms ease}
+.bt-btn:hover{background:#ffad52;border-color:#ffad52}
+.bt-btn2{display:inline-flex;gap:10px;align-items:center;color:inherit;text-decoration:none;padding:14px 26px;border-radius:40px;border:1px solid currentColor;transition:background 160ms ease}
+.bt-btn2:hover{background:rgba(127,127,127,.15)}
+.bt a:focus-visible{outline:2px solid var(--a);outline-offset:3px}
+.bt-acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.bt img{max-width:100%;height:auto;display:block}
+.bt-grid3{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--l);border-left:1px solid var(--l)}
+.bt-light .bt-grid3{border-color:var(--ll)}
+.bt-cell{padding:30px;border-right:1px solid var(--l);border-bottom:1px solid var(--l);background:var(--p)}
+.bt-light .bt-cell{background:var(--lp);border-color:var(--ll)}
+.bt-ic{width:36px;height:36px;border:1px solid var(--v);border-radius:5px;display:grid;place-items:center;color:var(--v);font-family:"IBM Plex Mono",monospace;font-size:13px;margin-bottom:18px}
+.bt-light .bt-ic{border-color:#b45f00;color:#b45f00}
+.bt-cell a{color:var(--a);font-weight:500;text-decoration:none}.bt-light .bt-cell a{color:#a35500}
+.bt-split{display:grid;grid-template-columns:5fr 7fr;gap:56px;align-items:start}
+.bt-list{list-style:none;padding:0;margin:0}
+.bt-list li{padding:14px 0 14px 28px;border-top:1px solid var(--l);position:relative}
+.bt-light .bt-list li{border-color:var(--ll)}
+.bt-list li::before{content:"";position:absolute;left:0;top:24px;width:12px;height:1px;background:var(--a)}
+@media (max-width:1100px){.bt-sec{padding:72px 0}.bt-split{gap:32px}}
+@media (max-width:800px){.bt-split{grid-template-columns:1fr}.bt-grid3{grid-template-columns:1fr 1fr}.bt-w{padding:0 20px}}
+@media (max-width:520px){.bt-grid3{grid-template-columns:1fr}.bt-sec{padding:56px 0}.bt-btn,.bt-btn2{width:100%;justify-content:center}}
+@media (prefers-reduced-motion:reduce){.bt *{transition:none!important}}
+.bt-hdr{position:sticky;top:0;z-index:50;background:rgba(7,9,14,.97);border-bottom:1px solid var(--l)}
+.bt-hdr .bt-w{display:flex;align-items:center;gap:28px;height:72px}
+.bt-logo{color:var(--i);text-decoration:none;font-weight:600;line-height:1.1;font-size:15px}.bt-logo b{color:var(--a);font-weight:600;letter-spacing:.04em}
+.bt-logo small{display:block;font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--im);font-weight:400}
+.bt-nav{display:flex;gap:22px;margin-left:auto}.bt-nav a{color:var(--im);text-decoration:none;font-size:14px}.bt-nav a:hover,.bt-nav a[aria-current]{color:var(--i)}
+.bt-htel{font-family:"IBM Plex Mono",monospace;color:var(--v);text-decoration:none;font-size:15px;white-space:nowrap}
+.bt-hdr .bt-btn{padding:10px 18px;font-size:14px}
+.bt-fab{display:none}
+@media (max-width:1100px){.bt-nav{gap:14px}.bt-hdr .bt-btn{display:none}}
+@media (max-width:800px){.bt-nav{display:none}.bt-htel{margin-left:auto;font-size:13px}
+.bt-fab{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:60;justify-content:center;box-shadow:0 8px 24px rgba(0,0,0,.4)}}
+.bt-mnav{display:none}@media (max-width:800px){.bt-mnav{display:flex;gap:16px;overflow-x:auto;padding:0 20px 12px;margin-top:-6px}.bt-mnav a{color:var(--im);font-size:13px;text-decoration:none;white-space:nowrap}}</style><header class="bt bt-hdr"><div class="bt-w"><a class="bt-logo" href="https://ztim2008.github.io/baltur-tashkent/"><b>BALTUR</b> Сервис №1<small>Ташкент · сервисный центр</small></a>
+<nav class="bt-nav" aria-label="Основное меню"><a href="https://ztim2008.github.io/baltur-tashkent/" aria-current="page">Главная</a><a href="https://ztim2008.github.io/baltur-tashkent/uslugi/">Услуги</a><a href="https://ztim2008.github.io/baltur-tashkent/gorelki-baltur/">Горелки Baltur</a><a href="https://ztim2008.github.io/baltur-tashkent/o-kompanii/">О компании</a><a href="https://ztim2008.github.io/baltur-tashkent/kontakty/">Контакты</a></nav><a class="bt-htel" href="tel:+998982100303">+998 98 210 03 03</a><a class="bt-btn" href="tel:+998982100303">Позвонить</a></div>
+<nav class="bt-mnav" aria-label="Меню"><a href="https://ztim2008.github.io/baltur-tashkent/" aria-current="page">Главная</a><a href="https://ztim2008.github.io/baltur-tashkent/uslugi/">Услуги</a><a href="https://ztim2008.github.io/baltur-tashkent/gorelki-baltur/">Горелки Baltur</a><a href="https://ztim2008.github.io/baltur-tashkent/o-kompanii/">О компании</a><a href="https://ztim2008.github.io/baltur-tashkent/kontakty/">Контакты</a></nav></header>
+<a class="bt bt-btn bt-fab" href="tel:+998982100303">Позвонить инженеру <span aria-hidden="true">→</span></a>
