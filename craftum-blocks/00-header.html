@@ -73,13 +73,43 @@ animation:bt-ga var(--dur) linear infinite,bt-ga calc(var(--dur)/.4) linear infi
 .bt-logo small{display:block;font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--im);font-weight:400}
 .bt-nav{display:flex;gap:22px;margin-left:auto}.bt-nav a{color:var(--im);text-decoration:none;font-size:14px}.bt-nav a:hover,.bt-nav a[aria-current]{color:var(--i)}
 .bt-htel{font-family:"IBM Plex Mono",monospace;color:var(--v);text-decoration:none;font-size:15px;white-space:nowrap}
-.bt-hdr .bt-btn{padding:10px 18px;font-size:14px}
+.bt-hdr .bt-w>.bt-btn{padding:10px 18px;font-size:14px}
 .bt-fab{display:none}
-@media (max-width:1100px){.bt-nav{gap:14px}.bt-hdr .bt-btn{display:none}}
+@media (max-width:1100px){.bt-nav{gap:14px}.bt-hdr .bt-w>.bt-btn{display:none}}
 @media (max-width:800px){.bt-nav{display:none}.bt-htel{margin-left:auto;font-size:13px}
 .bt-fab{display:flex;position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:60;justify-content:center;box-shadow:0 8px 24px rgba(0,0,0,.45);transform:translateY(160%);opacity:0;pointer-events:none;transition:transform 220ms ease,opacity 220ms ease}.bt-fab.is-on{transform:none;opacity:1;pointer-events:auto}
 body{padding-bottom:calc(76px + env(safe-area-inset-bottom))}}
-.bt-mnav{display:none}@media (max-width:800px){.bt-mnav{display:flex;gap:16px;overflow-x:auto;padding:0 20px 12px;margin-top:-6px}.bt-mnav a{color:var(--im);font-size:13px;text-decoration:none;white-space:nowrap}}</style><header class="bt bt-hdr"><div class="bt-w"><a class="bt-logo" href="https://ztim2008.github.io/baltur-tashkent/"><b>BALTUR</b> Сервис №1<small>Ташкент · сервисный центр</small></a>
-<nav class="bt-nav" aria-label="Основное меню"><a href="https://ztim2008.github.io/baltur-tashkent/" aria-current="page">Главная</a><a href="https://ztim2008.github.io/baltur-tashkent/uslugi/">Услуги</a><a href="https://ztim2008.github.io/baltur-tashkent/gorelki-baltur/">Горелки Baltur</a><a href="https://ztim2008.github.io/baltur-tashkent/o-kompanii/">О компании</a><a href="https://ztim2008.github.io/baltur-tashkent/kontakty/">Контакты</a></nav><a class="bt-htel" href="tel:+998982100303">+998 98 210 03 03</a><a class="bt-btn bt-call" href="tel:+998982100303"><span class="bt-sl">Позвонить</span></a></div>
-<nav class="bt-mnav" aria-label="Меню"><a href="https://ztim2008.github.io/baltur-tashkent/" aria-current="page">Главная</a><a href="https://ztim2008.github.io/baltur-tashkent/uslugi/">Услуги</a><a href="https://ztim2008.github.io/baltur-tashkent/gorelki-baltur/">Горелки Baltur</a><a href="https://ztim2008.github.io/baltur-tashkent/o-kompanii/">О компании</a><a href="https://ztim2008.github.io/baltur-tashkent/kontakty/">Контакты</a></nav></header>
-<a class="bt bt-btn bt-call bt-fab" href="tel:+998982100303"><span class="bt-sl">Позвонить <span aria-hidden="true">→</span></span></a>
+.bt-mnav{display:none}@media (max-width:800px){.bt-mnav{display:flex;gap:16px;overflow-x:auto;padding:0 20px 12px;margin-top:-6px}.bt-mnav a{color:var(--im);font-size:13px;text-decoration:none;white-space:nowrap}}.bt-icall,.bt-burger,.bt-menu{display:none}
+@media (max-width:800px){.bt-hdr .bt-hcall,.bt-htel{display:none!important}
+.bt-icall{display:flex;margin-left:auto;width:44px;height:44px;border-radius:50%;align-items:center;justify-content:center;background:var(--c);color:#fff}
+.bt-burger{display:flex;flex-direction:column;justify-content:center;gap:6px;width:44px;height:44px;padding:0 11px;margin-left:8px;background:transparent;border:1px solid var(--l);border-radius:50%;cursor:pointer;position:relative;z-index:80}
+.bt-burger span{display:block;height:2px;background:var(--i);border-radius:2px;transition:transform 300ms ease,opacity 200ms ease}
+.bt-burger[aria-expanded=true] span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.bt-burger[aria-expanded=true] span:nth-child(2){opacity:0;transform:scaleX(0)}
+.bt-burger[aria-expanded=true] span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+.bt-burger:focus-visible,.bt-icall:focus-visible,.bt-menu a:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.bt-menu{display:block;position:fixed;inset:0;z-index:70;overflow-y:auto;background:radial-gradient(80% 60% at 100% 0%,rgba(110,6,6,.55),transparent 70%),radial-gradient(70% 50% at 0% 100%,rgba(66,0,0,.6),transparent 70%),#0b1020;
+clip-path:circle(0 at calc(100% - 42px) 36px);transition:clip-path 450ms cubic-bezier(.7,0,.2,1)}
+.bt-menu[hidden]{display:none}
+.bt-menu-open .bt-menu{clip-path:circle(150% at calc(100% - 42px) 36px)}
+.bt-menu-open,.bt-menu-open body{overflow:hidden}
+.bt-menu-open .bt-fab{opacity:0!important;pointer-events:none!important;transform:translateY(160%)!important}
+.bt-menu-in{min-height:100%;display:flex;flex-direction:column;justify-content:space-between;gap:32px;padding:96px 24px calc(28px + env(safe-area-inset-bottom))}
+.bt-menu ol{list-style:none;margin:0;padding:0}
+.bt-menu li{border-bottom:1px solid rgba(255,255,255,.1);opacity:0;transform:translateY(18px);transition:opacity 350ms ease,transform 350ms ease;transition-delay:0ms}
+.bt-menu-open .bt-menu li{opacity:1;transform:none;transition-delay:calc(140ms + var(--i)*60ms)}
+.bt-menu li a{display:flex;align-items:baseline;gap:16px;padding:14px 0;color:var(--i);text-decoration:none;font-size:30px;font-weight:600;line-height:1.15}
+.bt-mn{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--im);font-weight:400;min-width:22px}
+.bt-menu a[aria-current=page]{color:var(--a)}.bt-menu a[aria-current=page] .bt-mn{color:var(--a)}
+.bt-menu-ft{display:flex;flex-direction:column;gap:14px;opacity:0;transition:opacity 350ms ease 0ms}
+.bt-menu-open .bt-menu-ft{opacity:1;transition-delay:480ms}
+.bt-mtel{font-family:"IBM Plex Mono",monospace;font-size:26px;color:var(--v);text-decoration:none}
+.bt-menu-ft .bt-btn{justify-content:center}.bt-menu-ft p{margin:0;color:var(--im);font-size:14px}}
+@media (prefers-reduced-motion:reduce){.bt-menu,.bt-menu li,.bt-menu-ft,.bt-burger span{transition:none!important}}</style><header class="bt bt-hdr"><div class="bt-w"><a class="bt-logo" href="https://ztim2008.github.io/baltur-tashkent/"><b>BALTUR</b> Сервис №1<small>Ташкент · сервисный центр</small></a>
+<nav class="bt-nav" aria-label="Основное меню"><a href="https://ztim2008.github.io/baltur-tashkent/" aria-current="page">Главная</a><a href="https://ztim2008.github.io/baltur-tashkent/uslugi/">Услуги</a><a href="https://ztim2008.github.io/baltur-tashkent/gorelki-baltur/">Горелки Baltur</a><a href="https://ztim2008.github.io/baltur-tashkent/o-kompanii/">О компании</a><a href="https://ztim2008.github.io/baltur-tashkent/kontakty/">Контакты</a></nav><a class="bt-htel" href="tel:+998982100303">+998 98 210 03 03</a><a class="bt-btn bt-call bt-hcall" href="tel:+998982100303"><span class="bt-sl">Позвонить</span></a>
+<a class="bt-icall" href="tel:+998982100303" aria-label="Позвонить: +998 98 210 03 03"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg></a>
+<button class="bt-burger" type="button" aria-expanded="false" aria-controls="bt-menu" aria-label="Открыть меню"><span></span><span></span><span></span></button></div>
+<div class="bt-menu" id="bt-menu" hidden><div class="bt-menu-in"><nav aria-label="Мобильное меню"><ol><li style="--i:0"><a href="https://ztim2008.github.io/baltur-tashkent/" aria-current="page"><span class="bt-mn">01</span>Главная</a></li><li style="--i:1"><a href="https://ztim2008.github.io/baltur-tashkent/uslugi/"><span class="bt-mn">02</span>Услуги</a></li><li style="--i:2"><a href="https://ztim2008.github.io/baltur-tashkent/gorelki-baltur/"><span class="bt-mn">03</span>Горелки Baltur</a></li><li style="--i:3"><a href="https://ztim2008.github.io/baltur-tashkent/o-kompanii/"><span class="bt-mn">04</span>О компании</a></li><li style="--i:4"><a href="https://ztim2008.github.io/baltur-tashkent/kontakty/"><span class="bt-mn">05</span>Контакты</a></li></ol></nav>
+<div class="bt-menu-ft"><span class="bt-k">Телефон инженера</span><a class="bt-mtel" href="tel:+998982100303">+998 98 210 03 03</a><a class="bt-btn bt-call" href="tel:+998982100303"><span class="bt-sl">Позвонить <span aria-hidden="true">→</span></span></a>
+<p>Чиланзар-20, Ташкент, Узбекистан<br>Пн–Сб 9:00–19:00</p></div></div></div></header>
+<a class="bt bt-btn bt-call bt-fab" href="tel:+998982100303"><span class="bt-sl">Позвонить <span aria-hidden="true">→</span></span></a><script src="https://ztim2008.github.io/baltur-tashkent/js/menu.js" defer></script>
