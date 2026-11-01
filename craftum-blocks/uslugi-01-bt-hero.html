@@ -46,6 +46,29 @@ font-family:"IBM Plex Sans",sans-serif;font-size:16px;line-height:1.6;color:var(
 @media (max-width:800px){.bt-split{grid-template-columns:1fr}.bt-grid3{grid-template-columns:1fr 1fr}.bt-w{padding:0 20px}}
 @media (max-width:520px){.bt-grid3{grid-template-columns:1fr}.bt-sec{padding:56px 0}.bt-btn,.bt-btn2{width:100%;justify-content:center}}
 @media (prefers-reduced-motion:reduce){.bt *{transition:none!important}}
+
+@property --bt-ga{syntax:"<angle>";initial-value:0deg;inherits:false}
+@property --bt-gao{syntax:"<angle>";initial-value:0deg;inherits:false}
+@property --bt-gp{syntax:"<percentage>";initial-value:5%;inherits:false}
+@property --bt-gs{syntax:"<color>";initial-value:white;inherits:false}
+.bt-btn{--sb:var(--a);--sh:#ffd29a;--shs:#fff3e0;--dur:3s;isolation:isolate;position:relative;overflow:hidden;border:1px solid transparent!important;
+background:linear-gradient(var(--sb),var(--sb)) padding-box,conic-gradient(from calc(var(--bt-ga) - var(--bt-gao)),transparent,var(--sh) var(--bt-gp),var(--bt-gs) calc(var(--bt-gp)*2),var(--sh) calc(var(--bt-gp)*3),transparent calc(var(--bt-gp)*4)) border-box!important;
+transition:--bt-gao 800ms cubic-bezier(.25,1,.5,1),--bt-gp 800ms cubic-bezier(.25,1,.5,1),--bt-gs 800ms cubic-bezier(.25,1,.5,1)!important;
+animation:bt-ga var(--dur) linear infinite,bt-ga calc(var(--dur)/.4) linear infinite reverse paused;animation-composition:add}
+.bt-btn.bt-call{--sb:var(--c);--sh:#7ee2a2;--shs:#dcfce7}
+.bt-btn:hover{--sb:var(--ch)}.bt-btn:not(.bt-call):hover{--sb:#ff9c45}
+.bt-btn::before,.bt-btn::after,.bt-btn>.bt-sl::before{content:"";pointer-events:none;position:absolute;left:50%;top:50%;translate:-50% -50%;z-index:-1}
+.bt-btn::before{--sz:calc(100% - 6px);width:var(--sz);height:var(--sz);border-radius:inherit;opacity:.35;background:radial-gradient(circle at 2px 2px,#fff .5px,transparent 0) padding-box;background-size:4px 4px;background-repeat:space;
+-webkit-mask-image:conic-gradient(from calc(var(--bt-ga) + 45deg),#000,transparent 10% 90%,#000);mask-image:conic-gradient(from calc(var(--bt-ga) + 45deg),#000,transparent 10% 90%,#000);animation:bt-ga var(--dur) linear infinite,bt-ga calc(var(--dur)/.4) linear infinite reverse paused;animation-composition:add}
+.bt-btn::after{width:100%;aspect-ratio:1;opacity:.5;background:linear-gradient(-50deg,transparent,var(--sh),transparent);-webkit-mask-image:radial-gradient(circle at bottom,transparent 40%,#000);mask-image:radial-gradient(circle at bottom,transparent 40%,#000);animation:bt-shim var(--dur) linear infinite,bt-shim calc(var(--dur)/.4) linear infinite reverse paused;animation-composition:add}
+.bt-btn>.bt-sl{position:relative;z-index:1;display:inline-flex;gap:10px;align-items:center}
+.bt-btn>.bt-sl::before{--sz:calc(100% + 2rem);width:var(--sz);height:var(--sz);box-shadow:inset 0 -1ex 2rem 4px var(--sh);opacity:0;transition:opacity 800ms cubic-bezier(.25,1,.5,1);animation:bt-breathe 4.5s linear infinite}
+.bt-btn:is(:hover,:focus-visible){--bt-gp:20%;--bt-gao:95deg;--bt-gs:var(--shs);animation-play-state:running}
+.bt-btn:is(:hover,:focus-visible)::before,.bt-btn:is(:hover,:focus-visible)::after{animation-play-state:running}
+.bt-btn:is(:hover,:focus-visible)>.bt-sl::before{opacity:.6}
+.bt-btn:focus-visible{outline:3px solid #fff;outline-offset:4px}.bt-btn:active{translate:0 1px}
+@keyframes bt-ga{to{--bt-ga:360deg}}@keyframes bt-shim{to{rotate:360deg}}@keyframes bt-breathe{0%,100%{scale:1}50%{scale:1.2}}
+@media (prefers-reduced-motion:reduce){.bt-btn,.bt-btn::before,.bt-btn::after,.bt-btn>.bt-sl::before{animation:none!important;transition:none!important}}
 .bt-hero{padding:88px 0 96px;overflow:hidden}.bt-hero .bt-w{display:grid;grid-template-columns:7fr 5fr;gap:56px;align-items:center}
 .bt-hero h1{font-size:clamp(40px,6vw,76px);line-height:1;letter-spacing:-.03em}
 .bt-hero .bt-lead{font-size:19px;max-width:560px}
@@ -58,5 +81,5 @@ font-family:"IBM Plex Sans",sans-serif;font-size:16px;line-height:1.6;color:var(
 .bt-big small{font-size:16px;color:var(--im);margin-left:6px}
 .bt-objrow{display:flex;justify-content:space-between;border-top:1px solid var(--l);padding-top:14px;margin-top:16px;font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--im)}
 @media (max-width:800px){.bt-hero .bt-w{grid-template-columns:1fr}.bt-frame{margin:16px 12px 0 0}.bt-frame::after{display:none}}</style>
-<section class="bt bt-sec bt-dark bt-hero bt-fx" data-veil data-veil-color="#420000"><div class="bt-w"><div><span class="bt-k">Услуги сервисного центра</span><h1>Обслуживание, ремонт и настройка горелок Baltur</h1><p class="bt-lead">Работы выполняют инженеры с опытом от 10 лет. Цены — по запросу: назовите модель горелки по телефону, и мы сразу озвучим стоимость.</p><div class="bt-acts"><a class="bt-btn bt-call" href="tel:+998982100303">Позвонить: +998 98 210 03 03 <span aria-hidden="true">→</span></a></div></div>
+<section class="bt bt-sec bt-dark bt-hero bt-fx" data-veil data-veil-color="#420000"><div class="bt-w"><div><span class="bt-k">Услуги сервисного центра</span><h1>Обслуживание, ремонт и настройка горелок Baltur</h1><p class="bt-lead">Работы выполняют инженеры с опытом от 10 лет. Цены — по запросу: назовите модель горелки по телефону, и мы сразу озвучим стоимость.</p><div class="bt-acts"><a class="bt-btn bt-call" href="tel:+998982100303"><span class="bt-sl">Позвонить: +998 98 210 03 03 <span aria-hidden="true">→</span></span></a></div></div>
 <div class="bt-frame"><div class="bt-obj"><img src="https://ztim2008.github.io/baltur-tashkent/img/hero.webp" alt="Горелки Baltur в котельной" width="1600" height="900" fetchpriority="high"><div class="bt-big">6<small>услуг</small></div><div class="bt-objrow"><span>полный цикл сервиса</span><span>цены по запросу</span></div></div></div></div></section>
