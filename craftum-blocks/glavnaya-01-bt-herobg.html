@@ -1,4 +1,4 @@
-<!-- Craftum HTML-блок: glavnaya-01-bt-hero. Самодостаточный: стили внутри, префикс .bt- -->
+<!-- Craftum HTML-блок: glavnaya-01-bt-herobg. Самодостаточный: стили внутри, префикс .bt- -->
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 .bt{--g:#07090e;--gt:#101522;--p:#10141c;--a:#ff8a2a;--c:#15803d;--ch:#166534;--v:#edcd8c;--i:#f4f5f7;--im:#c9ced8;--l:#303139;
@@ -69,17 +69,17 @@ animation:bt-ga var(--dur) linear infinite,bt-ga calc(var(--dur)/.4) linear infi
 .bt-btn:focus-visible{outline:3px solid #fff;outline-offset:4px}.bt-btn:active{translate:0 1px}
 @keyframes bt-ga{to{--bt-ga:360deg}}@keyframes bt-shim{to{rotate:360deg}}@keyframes bt-breathe{0%,100%{scale:1}50%{scale:1.2}}
 @media (prefers-reduced-motion:reduce){.bt-btn,.bt-btn::before,.bt-btn::after,.bt-btn>.bt-sl::before{animation:none!important;transition:none!important}}
-.bt-hero{padding:88px 0 96px;overflow:hidden}.bt-hero .bt-w{display:grid;grid-template-columns:7fr 5fr;gap:56px;align-items:center}
-.bt-hero h1{font-size:clamp(40px,6vw,76px);line-height:1;letter-spacing:-.03em}
-.bt-hero .bt-lead{font-size:19px;max-width:560px}
-.bt-frame{position:relative;margin:24px 24px 0 0}
-.bt-frame::before,.bt-frame::after{content:"";position:absolute;inset:0;border:1px solid var(--l);border-radius:5px}
-.bt-frame::before{transform:translate(12px,-12px)}.bt-frame::after{transform:translate(24px,-24px);border-color:#24262d}
-.bt-obj{position:relative;z-index:1;background:radial-gradient(120% 80% at 70% 0%,rgba(255,149,31,.18),transparent 60%),var(--p);border:1px solid var(--l);border-radius:5px;padding:28px}
-.bt-obj img{border-radius:4px;width:100%;aspect-ratio:16/9;object-fit:cover;object-position:75% 50%;margin-bottom:22px;background:#000}
-.bt-big{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;color:var(--v);font-size:56px;line-height:1}
-.bt-big small{font-size:16px;color:var(--im);margin-left:6px}
-.bt-objrow{display:flex;justify-content:space-between;border-top:1px solid var(--l);padding-top:14px;margin-top:16px;font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--im)}
-@media (max-width:800px){.bt-hero .bt-w{grid-template-columns:1fr}.bt-frame{margin:16px 12px 0 0}.bt-frame::after{display:none}}</style>
-<section class="bt bt-sec bt-dark bt-hero bt-fx" data-veil data-veil-color="#420000"><div class="bt-w"><div><span class="bt-k">Ташкент и область · круглосуточно</span><h1>Ремонт промышленных котлов в Ташкенте</h1><p class="bt-lead">Чиним паровые и водогрейные котлы, горелки и автоматику котельных. Дежурный инженер выезжает с газоанализатором и запчастями, обычно приезжает через полтора-два часа.</p><div class="bt-acts"><a class="bt-btn bt-call" href="tel:+998982100303"><span class="bt-sl">Позвонить: +998 98 210 03 03 <span aria-hidden="true">→</span></span></a><a class="bt-btn2" href="https://ztim2008.github.io/baltur-tashkent/remont-kotlov/">Что ремонтируем</a></div></div>
-<div class="bt-frame"><div class="bt-obj"><img src="https://ztim2008.github.io/baltur-tashkent/img/burner.webp" alt="Факел газовой горелки в топке промышленного котла" width="1600" height="900" fetchpriority="high"><div class="bt-big">24/7<small>аварийный выезд</small></div><div class="bt-objrow"><span>котлы до 20 МВт</span><span>газ · дизель · мазут</span></div></div></div></div></section>
+.bt-herobg{padding:120px 0 128px;min-height:min(86vh,820px);display:flex;align-items:center}
+.bt-herobg.bt-fx::before{background:image-set(url(https://ztim2008.github.io/baltur-tashkent/img/hero-bg.webp) type("image/webp"),url(https://ztim2008.github.io/baltur-tashkent/img/hero-bg.jpg) type("image/jpeg")) center/cover no-repeat;opacity:1}
+.bt-herobg.bt-fx::after{background:linear-gradient(90deg,rgba(7,9,14,.92) 0%,rgba(7,9,14,.78) 45%,rgba(7,9,14,.45) 100%),linear-gradient(180deg,rgba(7,9,14,.2),rgba(7,9,14,.7))}
+.bt-herobg .bt-w{width:100%}.bt-herobg h1{font-size:clamp(40px,6vw,80px);line-height:1;letter-spacing:-.03em;max-width:860px}
+.bt-herobg .bt-lead{font-size:19px;max-width:620px;color:#d9dde5}
+.bt-hacts{display:flex;flex-wrap:wrap;gap:16px;margin-top:36px}
+.bt-hacts a{padding:18px 30px;font-size:17px;min-height:60px}
+.bt-hacts .bt-btn2{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.55);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);font-weight:500}
+.bt-hacts .bt-btn2:hover{background:rgba(255,255,255,.16);border-color:#fff}
+@media (max-width:800px){.bt-herobg{padding:72px 0 80px;min-height:calc(100svh - 72px)}
+.bt-herobg.bt-fx::before{background-image:url(https://ztim2008.github.io/baltur-tashkent/img/hero-bg-m.webp)}
+.bt-herobg.bt-fx::after{background:linear-gradient(180deg,rgba(7,9,14,.65),rgba(7,9,14,.88))}
+.bt-hacts{flex-direction:column;gap:14px}.bt-hacts a{width:100%;justify-content:center}}</style>
+<section class="bt bt-sec bt-dark bt-herobg bt-fx" data-veil data-veil-color="#420000"><div class="bt-w"><span class="bt-k">Ташкент и область · круглосуточно</span><h1>Ремонт промышленных котлов в Ташкенте</h1><p class="bt-lead">Чиним паровые и водогрейные котлы, горелки и автоматику котельных. Дежурный инженер выезжает с газоанализатором и запчастями, обычно приезжает через полтора-два часа.</p><div class="bt-hacts"><a class="bt-btn bt-call" href="tel:+998982100303"><span class="bt-sl">Позвонить: +998 98 210 03 03 <span aria-hidden="true">→</span></span></a><a class="bt-btn2" href="https://ztim2008.github.io/baltur-tashkent/remont-kotlov/">Что ремонтируем <span aria-hidden="true">→</span></a></div></div></section>
